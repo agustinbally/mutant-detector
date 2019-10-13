@@ -1,4 +1,4 @@
-# Mutant Detector
+# Mutant Detector (API - REST)
 
 Mutant Detector es una api-rest que recibe una cadena de ADN y determina si la cadena recibida pertenece a un mutante.
 
@@ -36,7 +36,7 @@ Pertenece a un mutante
 - Las letras pertenecientes a una secuencia detectada, no serán tenidas en cuenta para otra secuencia en el mismo sentido.
 
 
-# Modo de uso
+## Modo de uso
 La api-rest consta de 2 endpoints, uno para evaluar si un ADN pertenece o no a un mutante, y el otro para obtener estadísticas sobre los ADN evaluados.
 
 *¿Cómo evaluar si un ADN pertenece a un mutante?*
@@ -101,7 +101,7 @@ También se agregaron tests de integración utilizando collections de postman, l
 
 Para ejecutar correctamente los tests de integración hay que editar el environment utilizado (magnetoapp.postman_environment.json) haciendo que todas lar urls utilicen la url base donde está hosteada la api-rest.
 
-# Programa
+# Mutant Detector (Programa)
 El programa que evalúa si un ADN es mutante es parte de la misma solución .net core.
 
 Para ejecutar el mismo hay que seguir los siguientes pasos desde la raíz del proyecto.
