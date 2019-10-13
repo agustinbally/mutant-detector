@@ -1,4 +1,17 @@
-# Mutant Detector
+Table of Contents
+=================
+
+  * [API REST](#api-rest)
+  	* [Modo de Uso](#modo-uso)
+	* [Secuencia de Evaluación](#secuencia-evaluacion)
+	* [Detalles de la solución](#detalles-solucion)
+	* [Despliegue](#despliegue)
+	* [Tests](#tests)
+  * [Programa](#programa)
+
+<a name="api-rest"/>
+
+# Mutant Detector (API - REST)
 
 Mutant Detector es una api-rest que recibe una cadena de ADN y determina si la cadena recibida pertenece a un mutante.
 
@@ -35,8 +48,9 @@ Pertenece a un mutante
 - Si hay dos secuencias de cuatro letras iguales del mismo caracter también se lo considera como mutante.
 - Las letras pertenecientes a una secuencia detectada, no serán tenidas en cuenta para otra secuencia en el mismo sentido.
 
+<a name="modo-uso"/>
 
-# Modo de uso
+## Modo de uso
 La api-rest consta de 2 endpoints, uno para evaluar si un ADN pertenece o no a un mutante, y el otro para obtener estadísticas sobre los ADN evaluados.
 
 *¿Cómo evaluar si un ADN pertenece a un mutante?*
@@ -66,10 +80,13 @@ Recibiendo como respuesta el siguiente json:
       “ratio”:0.4
 	}
 
+<a name="secuencia-evaluacion"/>
 
 ## Secuencia básica de la evaluación
 
 ![Alt text](https://github.com/agustinbally/mutant-detector/blob/master/secuencia.PNG?raw=true "secuencia-basica")
+
+<a name="detalles-solucion"/>
 
 ## Detalles de la solución
 
@@ -79,12 +96,16 @@ La solución se desarrolló como una webapi de .net core, compuesta por las sigu
 - Dominio: contiene entidades de dominio y servicios necesarios para evaluar ADNs.
 - Infraestructure: contiene repositorio y conector con dynamodb
 
-### Despliegue
+<a name="despliegue"/>
 
-La api-rest se hostea en Google Cloup Platform.
-La base de datos es un mongodb, utilizando MongoDb Atlas.
+## Despliegue
 
-### Tests
+- api-rest: hosteada en Google Cloup Platform.
+- base de datos: mongodb en MongoDb Atlas.
+
+<a name="tests"/>
+
+## Tests
 Se agregaron tests de las capas  api y domain (que contiene toda la lógica de evaluación)
 
 *¿Cómo ejecutar los tests?*
@@ -100,3 +121,24 @@ También se agregaron tests de integración utilizando collections de postman, l
     $ newman run Mutant.Api.postman_collection.json -e IntegrationTests/magnetoapp.postman_environment.json
 
 Para ejecutar correctamente los tests de integración hay que editar el environment utilizado (magnetoapp.postman_environment.json) haciendo que todas lar urls utilicen la url base donde está hosteada la api-rest.
+
+<a name="programa"/>
+
+# Mutant Detector (Programa)
+El programa que evalúa si un ADN es mutante es parte de la misma solución .net core.
+
+Para ejecutar el mismo hay que seguir los siguientes pasos desde la raíz del proyecto.
+
+
+    # compilo
+    dotnet build -c Release
+    
+    # ejecucion caso mutante
+    dotnet MutantDetector.Program/bin/Release/netcoreapp2.2/MutantDetector.Program.dll ATGCGA CAGTGC TTATGT AGAAGG CCCCTA TCACTG
+    
+    # ejecucion caso no mutante
+    dotnet MutantDetector.Program/bin/Release/netcoreapp2.2/MutantDetector.Program.dll ATGCGA CCGTGC TTATGT AGAAGG TACGTA TCACTG
+
+Siguiendo la secuencia:
+
+    donet path_programa/nombre_programa.dll string_array_adn
