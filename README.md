@@ -100,8 +100,8 @@ La solución se desarrolló como una webapi de .net core, compuesta por las sigu
 
 ## Despliegue
 
-La api-rest se hostea en Google Cloup Platform.
-La base de datos es un mongodb, utilizando MongoDb Atlas.
+- api-rest: hosteada en Google Cloup Platform.
+- base de datos: mongodb en MongoDb Atlas.
 
 <a name="tests"/>
 
