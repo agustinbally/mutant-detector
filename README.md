@@ -100,3 +100,22 @@ También se agregaron tests de integración utilizando collections de postman, l
     $ newman run Mutant.Api.postman_collection.json -e IntegrationTests/magnetoapp.postman_environment.json
 
 Para ejecutar correctamente los tests de integración hay que editar el environment utilizado (magnetoapp.postman_environment.json) haciendo que todas lar urls utilicen la url base donde está hosteada la api-rest.
+
+# Programa
+El programa que evalúa si un ADN es mutante es parte de la misma solución .net core.
+
+Para ejecutar el mismo hay que seguir los siguientes pasos desde la raíz del proyecto.
+
+
+    # compilo
+    dotnet build -c Release
+    
+    # ejecucion caso mutante
+    dotnet MutantDetector.Program/bin/Release/netcoreapp2.2/MutantDetector.Program.dll ATGCGA CAGTGC TTATGT AGAAGG CCCCTA TCACTG
+    
+    # ejecucion caso no mutante
+    dotnet MutantDetector.Program/bin/Release/netcoreapp2.2/MutantDetector.Program.dll ATGCGA CCGTGC TTATGT AGAAGG TACGTA TCACTG
+
+Siguiendo la secuencia:
+
+    donet path_programa/nombre_programa.dll string_array_adn
