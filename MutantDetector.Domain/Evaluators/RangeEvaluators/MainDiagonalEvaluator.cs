@@ -13,7 +13,7 @@ namespace MutantDetector.Domain.Evaluators.RangeEvaluators
             // recorro diagonales de la parte inferior de la matriz y la diagonal primaria
             for (var fixRow = 0; 
                 fixRow <= dna.Length - 3 && patternOccurrences < atMost; 
-                fixRow++, equalElementsCount = 0)
+                fixRow++)
             {
                 var row = fixRow;
                 var col = 0;
@@ -28,7 +28,7 @@ namespace MutantDetector.Domain.Evaluators.RangeEvaluators
             // recorro diagonales de la parte superior de la matriz 
             for (var fixCol = 1; 
                 fixCol <= dna.Length - 3 && patternOccurrences < atMost; 
-                fixCol++, equalElementsCount = 0)
+                fixCol++)
             {
                 var row = 0;
                 var col = fixCol;
