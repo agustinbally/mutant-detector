@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <UserSecretsId>edec591e-7c87-4f66-9b31-c99f8bbfcb44</UserSecretsId>
+    <AssemblyName>MutantDetector.Api</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.MongoDb" Version="2.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.0.2105168" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MutantDetector.Application\MutantDetector.Application.csproj" />
+    <ProjectReference Include="..\MutantDetector.Domain\MutantDetector.Domain.csproj" />
+    <ProjectReference Include="..\MutantDetector.Infrastructure\MutantDetector.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

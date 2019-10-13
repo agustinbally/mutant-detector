@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MutantDetector.Program": {
+      "commandName": "Project",
+      "commandLineArgs": "ATGCGA CAGTGC TTATGT AGAAGG CCCCTA TCACTG"
+    }
+  }
+}

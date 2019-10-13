@@ -1,0 +1,362 @@
+{
+	"info": {
+		"_postman_id": "628eeb3b-b2de-4078-880a-9b65fcf81679",
+		"name": "Mutant Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "IsMutant",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3d2552b9-3271-4c42-b02f-9d9272e99767",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"dna\": [\"ATGCGA\",\"CAGTGC\",\"TTATGT\",\"AGAAGG\",\"TACCCC\",\"TCACTG\"]\r\n}"
+				},
+				"url": {
+					"raw": "{{uri}}/mutant",
+					"host": [
+						"{{uri}}"
+					],
+					"path": [
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IsMutant Large - 2 seq row",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3694a568-f101-4b22-921f-4fbde4330e8a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"dna\": [\"ATTTTCCCC\",\"ABCDEFGHI\",\"EFGHIAENA\",\"BADCKJPAG\",\"EFGHIAENA\",\"BADCKJPAG\",\"EFGHIAENA\",\"BADCKJPAG\",\"EFGHIAENA\"]\t\r\n}"
+				},
+				"url": {
+					"raw": "{{uri}}/mutant",
+					"host": [
+						"{{uri}}"
+					],
+					"path": [
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IsMutant Large - 2 seq row main diag",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3694a568-f101-4b22-921f-4fbde4330e8a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"dna\": [\"ASEDRFTGF\",\"HACDEFGHI\",\"PFAHIAENA\",\"AADAKJPAG\",\"GFGHAYENA\",\"NADCKAPAG\",\"GFGHIAANA\",\"BADCKJPAG\",\"EFGHIAENA\"]\r\n}"
+				},
+				"url": {
+					"raw": "{{uri}}/mutant",
+					"host": [
+						"{{uri}}"
+					],
+					"path": [
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IsMutant Large - 2 seq row vertical",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "869ec90b-3ee0-4e88-b78f-814c4962207c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"dna\": [\"ASEDRFTGF\",\"ABCDEFGHI\",\"AFGHIAENA\",\"AADCKJPAG\",\"GFGHIAENA\",\"GADCKJPAG\",\"GFGHIAENA\",\"GADCKJPAG\",\"EFGHIAENA\"]\r\n}"
+				},
+				"url": {
+					"raw": "{{uri}}/mutant",
+					"host": [
+						"{{uri}}"
+					],
+					"path": [
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IsNotMutant Large - 2 seq joined",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9a9f16d6-f725-4fe7-a1f0-7edc48c37a24",
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"dna\": [\"ATTTTTZZZ\",\"ABCDEFGHI\",\"EFGHIAENA\",\"BADCKJPAG\",\"EFGHIAENA\",\"BADCKJPAG\",\"EFGHIAENA\",\"BADCKJPAG\",\"EFGHIAENA\"]\t\r\n}"
+				},
+				"url": {
+					"raw": "{{uri}}/mutant",
+					"host": [
+						"{{uri}}"
+					],
+					"path": [
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IsNotMutant Large - 2 seq joined main diag",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9a9f16d6-f725-4fe7-a1f0-7edc48c37a24",
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"dna\": [\"ASEDRFTGF\",\"HACDEFGHI\",\"PFAHIAENA\",\"AADAKJPAG\",\"GFGHAYENA\",\"NADCKAPAG\",\"GFGHIAENA\",\"BADCKJPAG\",\"EFGHIAENA\"]\r\n}"
+				},
+				"url": {
+					"raw": "{{uri}}/mutant",
+					"host": [
+						"{{uri}}"
+					],
+					"path": [
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IsNotMutant Large - 2 seq joined vertical",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2766b217-5fbe-40a9-a848-359376609cb2",
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"dna\": [\"ASEDRFTGF\",\"ABCDEFGHI\",\"AFGHIAENA\",\"AADCKJPAG\",\"AFGHIAENA\",\"AADCKJPAG\",\"EFGHIAENA\",\"BADCKJPAG\",\"EFGHIAENA\"]\r\n}pm.test(\"Status code is 403\", function () {\r\n    pm.response.to.have.status(403);\r\n});"
+				},
+				"url": {
+					"raw": "{{uri}}/mutant",
+					"host": [
+						"{{uri}}"
+					],
+					"path": [
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IsNotMutant",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0290cb8a-b962-4b76-90f0-e09c119e737b",
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"dna\": [\"ATGCGA\",\"CBGTGC\",\"TTATGT\",\"AGATGG\",\"CACCTA\",\"TCACTG\"]\r\n}"
+				},
+				"url": {
+					"raw": "{{uri}}/mutant",
+					"host": [
+						"{{uri}}"
+					],
+					"path": [
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{uri}}/stats",
+					"host": [
+						"{{uri}}"
+					],
+					"path": [
+						"stats"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

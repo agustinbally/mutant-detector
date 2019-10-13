@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MutantDetector.Api", "MutantDetector.Api\MutantDetector.Api.csproj", "{6DBEE712-1F28-4B11-9637-E3D0A28CF1D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MutantDetector.Application", "MutantDetector.Application\MutantDetector.Application.csproj", "{9EF7258F-5FB8-4BE3-967C-239399E59A5C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MutantDetector.Domain", "MutantDetector.Domain\MutantDetector.Domain.csproj", "{2B402D4E-C59B-41D3-AED9-674160F14801}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MutantDetector.Infrastructure", "MutantDetector.Infrastructure\MutantDetector.Infrastructure.csproj", "{8C76761C-0909-464C-91A7-9CD00289F4B5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MutantDetector.Program", "MutantDetector.Program\MutantDetector.Program.csproj", "{C286EF9B-4EF2-43D7-9E5A-BFBAB9DC7473}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E09B97EF-7047-4E24-9575-B1358FDAF325}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutantDetector.Domain.Tests", "MutantDetector.Domain.Tests\MutantDetector.Domain.Tests.csproj", "{8DDC9C2C-F8BC-45DB-AF50-0055B90A513A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MutantDetector.Api.Tests", "MutantDetector.Api.Tests\MutantDetector.Api.Tests.csproj", "{6EFAEC8B-4808-48A1-997C-FEF133B3F55F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DBEE712-1F28-4B11-9637-E3D0A28CF1D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DBEE712-1F28-4B11-9637-E3D0A28CF1D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DBEE712-1F28-4B11-9637-E3D0A28CF1D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DBEE712-1F28-4B11-9637-E3D0A28CF1D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EF7258F-5FB8-4BE3-967C-239399E59A5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EF7258F-5FB8-4BE3-967C-239399E59A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EF7258F-5FB8-4BE3-967C-239399E59A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EF7258F-5FB8-4BE3-967C-239399E59A5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B402D4E-C59B-41D3-AED9-674160F14801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B402D4E-C59B-41D3-AED9-674160F14801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B402D4E-C59B-41D3-AED9-674160F14801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B402D4E-C59B-41D3-AED9-674160F14801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C76761C-0909-464C-91A7-9CD00289F4B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C76761C-0909-464C-91A7-9CD00289F4B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C76761C-0909-464C-91A7-9CD00289F4B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C76761C-0909-464C-91A7-9CD00289F4B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C286EF9B-4EF2-43D7-9E5A-BFBAB9DC7473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C286EF9B-4EF2-43D7-9E5A-BFBAB9DC7473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C286EF9B-4EF2-43D7-9E5A-BFBAB9DC7473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C286EF9B-4EF2-43D7-9E5A-BFBAB9DC7473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DDC9C2C-F8BC-45DB-AF50-0055B90A513A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DDC9C2C-F8BC-45DB-AF50-0055B90A513A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DDC9C2C-F8BC-45DB-AF50-0055B90A513A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DDC9C2C-F8BC-45DB-AF50-0055B90A513A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EFAEC8B-4808-48A1-997C-FEF133B3F55F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EFAEC8B-4808-48A1-997C-FEF133B3F55F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EFAEC8B-4808-48A1-997C-FEF133B3F55F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EFAEC8B-4808-48A1-997C-FEF133B3F55F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8DDC9C2C-F8BC-45DB-AF50-0055B90A513A} = {E09B97EF-7047-4E24-9575-B1358FDAF325}
+		{6EFAEC8B-4808-48A1-997C-FEF133B3F55F} = {E09B97EF-7047-4E24-9575-B1358FDAF325}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FDF43EF-9435-4397-A7E0-3A134D40B95D}
+	EndGlobalSection
+EndGlobal
