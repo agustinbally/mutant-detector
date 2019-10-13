@@ -3,7 +3,7 @@ using MutantDetector.Domain.Entities;
 
 namespace MutantDetector.Domain.Evaluators.RangeEvaluators
 {
-    public class ColumnEvaluator : IRangeEvaluator
+    public class ColumnEvaluator : RangeEvaluatorBase, IRangeEvaluator
     {
         public int GetPatternOccurrences(HumanDna dna, int atMost)
         {
@@ -16,16 +16,7 @@ namespace MutantDetector.Domain.Evaluators.RangeEvaluators
                     row < dna.Length - 1 && patternOccurrences < atMost;
                     row++)
                 {
-                    equalElementsCount = dna.Element(row, col) == dna.Element(row + 1, col)
-                                        ? ++equalElementsCount
-                                        : 0;
-                    
-                    if  (equalElementsCount == 3)
-                    {
-                        equalElementsCount = 0;
-                        patternOccurrences++;
-                        row++;
-                    }
+                    Compare(dna, ref patternOccurrences, ref equalElementsCount, ref row, ref col, 1, 0);                   
                 }
             }
 

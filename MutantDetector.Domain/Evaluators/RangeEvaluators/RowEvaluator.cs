@@ -6,7 +6,7 @@ namespace MutantDetector.Domain.Evaluators.RangeEvaluators
     /// <summary>
     /// Recorre diagonales de la matriz
     /// </summary>
-    public class RowEvaluator : IRangeEvaluator
+    public class RowEvaluator : RangeEvaluatorBase, IRangeEvaluator
     {
         public int GetPatternOccurrences(HumanDna dna, int atMost)
         {
@@ -19,16 +19,7 @@ namespace MutantDetector.Domain.Evaluators.RangeEvaluators
                     col < dna.Length - 1 && patternOccurrences < atMost;
                     col++)
                 {
-                    equalElementsCount = dna.Element(row, col) == dna.Element(row, col + 1)
-                                       ? ++equalElementsCount
-                                       : 0;
-
-                    if (equalElementsCount == 3)
-                    {
-                        equalElementsCount = 0;
-                        patternOccurrences++;
-                        col++;
-                    }
+                    Compare(dna, ref patternOccurrences, ref equalElementsCount, ref row, ref col, 0, 1);                    
                 }
             }
 

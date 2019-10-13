@@ -3,7 +3,7 @@ using MutantDetector.Domain.Entities;
 
 namespace MutantDetector.Domain.Evaluators.RangeEvaluators
 {
-    public class MainDiagonalEvaluator : IRangeEvaluator
+    public class MainDiagonalEvaluator : RangeEvaluatorBase, IRangeEvaluator
     {
         public int GetPatternOccurrences(HumanDna dna, int atMost)
         {
@@ -21,20 +21,7 @@ namespace MutantDetector.Domain.Evaluators.RangeEvaluators
 
                 while (row < dna.Length - 1 && patternOccurrences < atMost)
                 {
-                    equalElementsCount = dna.Element(row, col) == dna.Element(row + 1, col + 1)
-                                       ? ++equalElementsCount
-                                       : 0;
-
-                    if (equalElementsCount == 3)
-                    {
-                        equalElementsCount = 0;
-                        patternOccurrences++;
-                        row = row + 1;
-                        col = col + 1;
-                    }
-
-                    row = row + 1;
-                    col = col + 1;
+                    Compare(dna, ref patternOccurrences, ref equalElementsCount, ref row, ref col, 1, 1, true);                    
                 }
             }
 
@@ -49,20 +36,7 @@ namespace MutantDetector.Domain.Evaluators.RangeEvaluators
 
                 while (col < dna.Length - 1 && patternOccurrences < atMost)
                 {
-                    equalElementsCount = dna.Element(row, col) == dna.Element(row + 1, col + 1)
-                                       ? ++equalElementsCount
-                                       : 0;
-
-                    if (equalElementsCount == 3)
-                    {
-                        equalElementsCount = 0;
-                        patternOccurrences++;
-                        row = row + 1;
-                        col = col + 1;
-                    }
-
-                    row = row + 1;
-                    col = col + 1;
+                    Compare(dna, ref patternOccurrences, ref equalElementsCount, ref row, ref col, 1, 1, true);
                 }
             }
 

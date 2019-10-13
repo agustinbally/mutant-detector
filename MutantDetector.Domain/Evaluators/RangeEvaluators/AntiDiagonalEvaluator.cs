@@ -6,7 +6,7 @@ namespace MutantDetector.Domain.Evaluators.RangeEvaluators
     /// <summary>
     /// Recorre diagonales invertidas de la matriz
     /// </summary>
-    public class AntiDiagonalEvaluator : IRangeEvaluator
+    public class AntiDiagonalEvaluator : RangeEvaluatorBase, IRangeEvaluator
     {
         public int GetPatternOccurrences(HumanDna dna, int atMost)
         {
@@ -23,22 +23,9 @@ namespace MutantDetector.Domain.Evaluators.RangeEvaluators
                 equalElementsCount = 0;
 
                 while (row >= 1 && patternOccurrences < atMost)
-                {                    
-                    equalElementsCount = dna.Element(row, col) == dna.Element(row -1, col + 1)
-                                       ? ++equalElementsCount
-                                       : 0;
-
-                    if (equalElementsCount == 3)
-                    {
-                        equalElementsCount = 0;
-                        patternOccurrences++;
-                        row = row - 1;
-                        col = col + 1;
-                    }
-
-                    row = row - 1;
-                    col = col + 1;
-                }                
+                {
+                    Compare(dna, ref patternOccurrences, ref equalElementsCount, ref row, ref col, -1 , 1, true);
+                }
             }
 
             // recorro diagonales de la parte inferior de la matriz
@@ -52,24 +39,11 @@ namespace MutantDetector.Domain.Evaluators.RangeEvaluators
 
                 while (col < dna.Length - 1 && patternOccurrences < atMost)
                 {
-                    equalElementsCount = dna.Element(row, col) == dna.Element(row - 1, col + 1)
-                                       ? ++equalElementsCount
-                                       : 0;
-
-                    if (equalElementsCount == 3)
-                    {
-                        equalElementsCount = 0;
-                        patternOccurrences++;
-                        row = row - 1;
-                        col = col + 1;
-                    }
-
-                    row = row - 1;
-                    col = col + 1;
+                    Compare(dna, ref patternOccurrences, ref equalElementsCount, ref row, ref col, -1, 1, true);                   
                 }
             }
 
             return patternOccurrences;
-        }
+        }      
     }
 }
