@@ -98,14 +98,14 @@ La solución se desarrolló como una webapi de .net core, compuesta por las sigu
 
 <a name="despliegue"/>
 
-### Despliegue
+## Despliegue
 
 La api-rest se hostea en Google Cloup Platform.
 La base de datos es un mongodb, utilizando MongoDb Atlas.
 
 <a name="tests"/>
 
-### Tests
+## Tests
 Se agregaron tests de las capas  api y domain (que contiene toda la lógica de evaluación)
 
 *¿Cómo ejecutar los tests?*
